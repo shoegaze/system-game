@@ -13,7 +13,7 @@ public class PlayerLook : MonoBehaviour {
     float my = Input.GetAxis("Mouse Y");
     var ct = camera.transform;
     
-    ct.Rotate(0f, horizontalSensitivity * mx, 0f, Space.Self);
+    ct.Rotate(0f, horizontalSensitivity * mx, 0f, Space.World);
     ct.Rotate(-verticalSensitivity * my, 0f, 0f, Space.Self);
   }
 }
