@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
@@ -15,8 +13,8 @@ public class PlayerMove : MonoBehaviour {
   private void Update() {
     float h = Input.GetAxis("Horizontal");
     float v = Input.GetAxis("Vertical");
-
     var ct = camera.transform;
+    
     var dir = (h * ct.right + v * ct.forward).normalized;
     rb.velocity = speed * dir;
   }

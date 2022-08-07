@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534288154}
+  - component: {fileID: 534288155}
   m_Layer: 0
   m_Name: Foot Root
   m_TagString: Untagged
@@ -146,13 +147,59 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534288153}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1215622795}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &534288155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534288153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9307c08443f45a19a0ffa21fc16b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0.01
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1215622798}
+        m_TargetAssemblyTypeName: SaySomething, Assembly-CSharp
+        m_MethodName: SayHello
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SayHello
+          m_BoolArgument: 0
+        m_CallState: 2
+  onMiss:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1215622798}
+        m_TargetAssemblyTypeName: SaySomething, Assembly-CSharp
+        m_MethodName: SayGoodbye
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SayGoodbye
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &558209679
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +450,7 @@ GameObject:
   - component: {fileID: 1215622794}
   - component: {fileID: 1215622796}
   - component: {fileID: 1215622797}
+  - component: {fileID: 1215622798}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -420,12 +468,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!4 &1215622795
 Transform:
   m_ObjectHideFlags: 0
@@ -472,6 +520,18 @@ MonoBehaviour:
   camera: {fileID: 963194227}
   horizontalSensitivity: 1
   verticalSensitivity: 1
+--- !u!114 &1215622798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215622793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875867bd97ee644299d78a0a1902e159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1416632257
 GameObject:
   m_ObjectHideFlags: 0
