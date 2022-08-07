@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
+  [SerializeField] private new Camera camera;
   [SerializeField, Min(0f)] private float speed;
   
   private Rigidbody rb;
@@ -15,7 +16,8 @@ public class PlayerMove : MonoBehaviour {
     float h = Input.GetAxis("Horizontal");
     float v = Input.GetAxis("Vertical");
 
-    var dir = (h * Vector3.right + v * Vector3.forward).normalized;
+    var ct = camera.transform;
+    var dir = (h * ct.right + v * ct.forward).normalized;
     rb.velocity = speed * dir;
   }
 }
